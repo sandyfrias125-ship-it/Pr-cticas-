@@ -7,10 +7,10 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout proyecto
+      - name: Checkout project
         uses: actions/checkout@v4
 
-      - name: Exportar APK con Godot
+      - name: Export APK with Godot
         uses: firebelley/godot-export@v7.0.0
         with:
           godot_version: "4.2.2"
@@ -23,7 +23,7 @@ jobs:
           ANDROID_KEY_ALIAS: ${{ secrets.ANDROID_KEY_ALIAS }}
           ANDROID_KEY_PASSWORD: ${{ secrets.ANDROID_KEY_PASSWORD }}
 
-      - name: Subir APK
+      - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
           name: Wrestling2D_APK

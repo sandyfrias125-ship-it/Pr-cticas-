@@ -1,0 +1,182 @@
+{
+  "company": {
+    "name": "Tu Empresa",
+    "week": 1,
+    "cash": 50000,
+    "reputation": 50,
+    "fans": 50000,
+    "tv_deal": {
+      "name": "Local TV",
+      "weekly_fee": 0,
+      "share": 0.25
+    },
+    "expenses": {
+      "staff": 5000,
+      "arena_base": 2500,
+      "medical": 1000
+    }
+  },
+  "venues": [
+    {
+      "id": "small_hall",
+      "name": "Salón pequeño",
+      "capacity": 800,
+      "cost": 1500
+    },
+    {
+      "id": "mid_arena",
+      "name": "Arena mediana",
+      "capacity": 4500,
+      "cost": 7500
+    },
+    {
+      "id": "big_arena",
+      "name": "Gran arena",
+      "capacity": 12000,
+      "cost": 25000
+    }
+  ],
+  "match_types": [
+    {
+      "id": "singles",
+      "name": "Individual",
+      "slots": 2
+    },
+    {
+      "id": "tag",
+      "name": "Parejas",
+      "slots": 4
+    },
+    {
+      "id": "triple",
+      "name": "Triple amenaza",
+      "slots": 3
+    },
+    {
+      "id": "battle_royal",
+      "name": "Battle Royale",
+      "slots": 10
+    }
+  ],
+  "roster": [
+    {
+      "id": "p1",
+      "name": "El Toro",
+      "style": "Brawler",
+      "popularity": 55,
+      "skill": 60,
+      "morale": 60,
+      "alignment": "Face",
+      "injury": 0,
+      "contract": {
+        "weeks_left": 12,
+        "salary": 1200,
+        "exclusive": true
+      }
+    },
+    {
+      "id": "p2",
+      "name": "Sombra",
+      "style": "Technical",
+      "popularity": 50,
+      "skill": 65,
+      "morale": 55,
+      "alignment": "Heel",
+      "injury": 0,
+      "contract": {
+        "weeks_left": 10,
+        "salary": 1100,
+        "exclusive": true
+      }
+    },
+    {
+      "id": "p3",
+      "name": "Relámpago",
+      "style": "High Flyer",
+      "popularity": 45,
+      "skill": 62,
+      "morale": 58,
+      "alignment": "Face",
+      "injury": 0,
+      "contract": {
+        "weeks_left": 8,
+        "salary": 900,
+        "exclusive": false
+      }
+    },
+    {
+      "id": "p4",
+      "name": "Martillo",
+      "style": "Powerhouse",
+      "popularity": 48,
+      "skill": 58,
+      "morale": 52,
+      "alignment": "Heel",
+      "injury": 0,
+      "contract": {
+        "weeks_left": 6,
+        "salary": 800,
+        "exclusive": false
+      }
+    }
+  ],
+  "titles": [
+    {
+      "id": "world",
+      "name": "Campeonato Mundial",
+      "prestige": 80,
+      "holder": "p1"
+    },
+    {
+      "id": "tag",
+      "name": "Campeonato de Parejas",
+      "prestige": 60,
+      "holder": ""
+    }
+  ],
+  "rivalries": [
+    {
+      "id": "r1",
+      "a": "p1",
+      "b": "p2",
+      "heat": 55,
+      "weeks": 3,
+      "status": "Activa"
+    }
+  ],
+  "storylines": [
+    {
+      "id": "s1",
+      "name": "La coronación",
+      "beats": [
+        {
+          "week": 1,
+          "type": "promo",
+          "desc": "El campeón reta a cualquiera."
+        },
+        {
+          "week": 2,
+          "type": "match",
+          "desc": "El retador gana un combate clave."
+        },
+        {
+          "week": 3,
+          "type": "angle",
+          "desc": "Traición después del show."
+        }
+      ],
+      "progress": 0,
+      "status": "Activa"
+    }
+  ],
+  "calendar": [
+    {
+      "week": 1,
+      "show": {
+        "name": "Show Semanal #1",
+        "venue": "small_hall",
+        "matches": []
+      }
+    }
+  ]
+}

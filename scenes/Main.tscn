@@ -1,0 +1,344 @@
+[gd_scene load_steps=4 format=3]
+
+[ext_resource type="Script" path="res://scripts/Main.gd" id="1_xxxx"]
+
+[node name="Main" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource("1_xxxx")
+
+[node name="Title" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 20.0
+offset_top = 14.0
+offset_right = -20.0
+offset_bottom = 44.0
+text = "Wrestling 2D — Modo Promotor"
+horizontal_alignment = 1
+
+[node name="Status" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 20.0
+offset_top = 50.0
+offset_right = -20.0
+offset_bottom = 74.0
+text = ""
+
+[node name="MainStack" type="VBoxContainer" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = 90.0
+offset_right = -20.0
+offset_bottom = -20.0
+theme_override_constants/separation = 10
+
+[node name="TopButtons" type="HBoxContainer" parent="MainStack"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="BtnNew" type="Button" parent="MainStack/TopButtons"]
+unique_name_in_owner = true
+text = "Nueva partida"
+pressed = true
+
+[node name="BtnContinue" type="Button" parent="MainStack/TopButtons"]
+unique_name_in_owner = true
+text = "Continuar"
+
+[node name="BtnSettings" type="Button" parent="MainStack/TopButtons"]
+unique_name_in_owner = true
+text = "Ajustes"
+
+[node name="BtnQuit" type="Button" parent="MainStack/TopButtons"]
+unique_name_in_owner = true
+text = "Salir"
+
+[node name="AppTabs" type="TabContainer" parent="MainStack"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+visible = false
+
+[node name="Booking" type="VBoxContainer" parent="MainStack/AppTabs"]
+layout_mode = 2
+title = "Modo Promotor"
+theme_override_constants/separation = 8
+
+[node name="Header" type="HBoxContainer" parent="MainStack/AppTabs/Booking"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="WeekLabel" type="Label" parent="MainStack/AppTabs/Booking/Header"]
+unique_name_in_owner = true
+text = "Semana: 1"
+
+[node name="CashLabel" type="Label" parent="MainStack/AppTabs/Booking/Header"]
+unique_name_in_owner = true
+text = "Dinero: $0"
+
+[node name="SaveBtn" type="Button" parent="MainStack/AppTabs/Booking/Header"]
+text = "Guardar"
+
+[node name="SimBtn" type="Button" parent="MainStack/AppTabs/Booking/Header"]
+text = "Simular"
+
+[node name="Lang" type="OptionButton" parent="MainStack/AppTabs/Booking/Header"]
+item_count = 2
+selected = 0
+popup/item_0/text = "Español"
+popup/item_1/text = "English"
+
+[node name="ShowRow" type="HBoxContainer" parent="MainStack/AppTabs/Booking"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="ShowName" type="LineEdit" parent="MainStack/AppTabs/Booking/ShowRow"]
+unique_name_in_owner = true
+size_flags_horizontal = 3
+placeholder_text = "Nombre del show"
+
+[node name="VenueOptions" type="OptionButton" parent="MainStack/AppTabs/Booking/ShowRow"]
+unique_name_in_owner = true
+size_flags_horizontal = 3
+
+[node name="MatchesRow" type="HBoxContainer" parent="MainStack/AppTabs/Booking"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="MatchA" type="OptionButton" parent="MainStack/AppTabs/Booking/MatchesRow"]
+unique_name_in_owner = true
+size_flags_horizontal = 3
+
+[node name="MatchB" type="OptionButton" parent="MainStack/AppTabs/Booking/MatchesRow"]
+unique_name_in_owner = true
+size_flags_horizontal = 3
+
+[node name="Stipulation" type="LineEdit" parent="MainStack/AppTabs/Booking/MatchesRow"]
+unique_name_in_owner = true
+size_flags_horizontal = 3
+placeholder_text = "Estipulación (opcional)"
+
+[node name="TitleMatch" type="CheckButton" parent="MainStack/AppTabs/Booking/MatchesRow"]
+unique_name_in_owner = true
+text = "Por título"
+
+[node name="TitlePick" type="OptionButton" parent="MainStack/AppTabs/Booking/MatchesRow"]
+unique_name_in_owner = true
+size_flags_horizontal = 2
+
+[node name="AddMatch" type="Button" parent="MainStack/AppTabs/Booking/MatchesRow"]
+text = "Agregar"
+
+[node name="ClearCard" type="Button" parent="MainStack/AppTabs/Booking/MatchesRow"]
+text = "Limpiar"
+
+[node name="CardList" type="ItemList" parent="MainStack/AppTabs/Booking"]
+unique_name_in_owner = true
+size_flags_vertical = 3
+
+[node name="CardActions" type="HBoxContainer" parent="MainStack/AppTabs/Booking"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="DecideWinner" type="Button" parent="MainStack/AppTabs/Booking/CardActions"]
+text = "Decidir ganador"
+
+[node name="PlayMatch" type="Button" parent="MainStack/AppTabs/Booking/CardActions"]
+text = "Jugar combate"
+
+[node name="LastResult" type="Label" parent="MainStack/AppTabs/Booking"]
+unique_name_in_owner = true
+text = ""
+
+[node name="Roster" type="VBoxContainer" parent="MainStack/AppTabs"]
+layout_mode = 2
+title = "Plantilla"
+theme_override_constants/separation = 8
+
+[node name="RosterList" type="ItemList" parent="MainStack/AppTabs/Roster"]
+unique_name_in_owner = true
+size_flags_vertical = 3
+
+[node name="RosterActions" type="HBoxContainer" parent="MainStack/AppTabs/Roster"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="HireName" type="LineEdit" parent="MainStack/AppTabs/Roster/RosterActions"]
+unique_name_in_owner = true
+size_flags_horizontal = 3
+placeholder_text = "Nombre para contratar"
+
+[node name="Hire" type="Button" parent="MainStack/AppTabs/Roster/RosterActions"]
+text = "Contratar"
+
+[node name="Fire" type="Button" parent="MainStack/AppTabs/Roster/RosterActions"]
+text = "Despedir"
+
+[node name="Titles" type="VBoxContainer" parent="MainStack/AppTabs"]
+layout_mode = 2
+title = "Títulos"
+theme_override_constants/separation = 8
+
+[node name="TitlesList" type="ItemList" parent="MainStack/AppTabs/Titles"]
+unique_name_in_owner = true
+size_flags_vertical = 3
+
+[node name="TitleActions" type="HBoxContainer" parent="MainStack/AppTabs/Titles"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="TitleName" type="LineEdit" parent="MainStack/AppTabs/Titles/TitleActions"]
+unique_name_in_owner = true
+size_flags_horizontal = 3
+placeholder_text = "Nombre del título"
+
+[node name="TitlePrestige" type="SpinBox" parent="MainStack/AppTabs/Titles/TitleActions"]
+unique_name_in_owner = true
+min_value = 10.0
+max_value = 100.0
+value = 60.0
+
+[node name="CreateTitle" type="Button" parent="MainStack/AppTabs/Titles/TitleActions"]
+text = "Crear"
+
+[node name="Rivalries" type="VBoxContainer" parent="MainStack/AppTabs"]
+layout_mode = 2
+title = "Rivalidades"
+theme_override_constants/separation = 8
+
+[node name="RivalriesList" type="ItemList" parent="MainStack/AppTabs/Rivalries"]
+unique_name_in_owner = true
+size_flags_vertical = 3
+
+[node name="RivalActions" type="HBoxContainer" parent="MainStack/AppTabs/Rivalries"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="RivA" type="OptionButton" parent="MainStack/AppTabs/Rivalries/RivalActions"]
+unique_name_in_owner = true
+size_flags_horizontal = 3
+
+[node name="RivB" type="OptionButton" parent="MainStack/AppTabs/Rivalries/RivalActions"]
+unique_name_in_owner = true
+size_flags_horizontal = 3
+
+[node name="CreateRivalry" type="Button" parent="MainStack/AppTabs/Rivalries/RivalActions"]
+text = "Crear rivalidad"
+
+[node name="Storylines" type="VBoxContainer" parent="MainStack/AppTabs"]
+layout_mode = 2
+title = "Historias"
+theme_override_constants/separation = 8
+
+[node name="StoryList" type="ItemList" parent="MainStack/AppTabs/Storylines"]
+unique_name_in_owner = true
+size_flags_vertical = 3
+
+[node name="Calendar" type="VBoxContainer" parent="MainStack/AppTabs"]
+layout_mode = 2
+title = "Calendario"
+theme_override_constants/separation = 8
+
+[node name="Finanzas" type="VBoxContainer" parent="MainStack/AppTabs"]
+layout_mode = 2
+title = "Finanzas"
+theme_override_constants/separation = 8
+
+[node name="FinRow" type="HBoxContainer" parent="MainStack/AppTabs/Finanzas"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="FinCashLbl" type="Label" parent="MainStack/AppTabs/Finanzas/FinRow"]
+text = "Dinero:"
+
+[node name="FinCash" type="Label" parent="MainStack/AppTabs/Finanzas/FinRow"]
+unique_name_in_owner = true
+text = "$0"
+
+[node name="FinRepLbl" type="Label" parent="MainStack/AppTabs/Finanzas/FinRow"]
+text = "Reputación:"
+
+[node name="FinRep" type="Label" parent="MainStack/AppTabs/Finanzas/FinRow"]
+unique_name_in_owner = true
+text = "0"
+
+[node name="Settings" type="VBoxContainer" parent="MainStack/AppTabs"]
+layout_mode = 2
+title = "Opciones"
+theme_override_constants/separation = 8
+
+[node name="Info" type="Label" parent="MainStack/AppTabs/Settings"]
+text = "Este proyecto es un prototipo completo de Modo Promotor (Booking) + Combate 2D.
+Puedes expandir reglas, UI y contenido fácilmente en scripts/data."
+
+[node name="Combat2D" type="VBoxContainer" parent="MainStack/AppTabs"]
+layout_mode = 2
+title = "Combate 2D"
+theme_override_constants/separation = 8
+
+[node name="HintCombat" type="Label" parent="MainStack/AppTabs/Combat2D"]
+unique_name_in_owner = true
+text = "Controles: A Golpe | S Patada | D Bloquear | F Esquivar | Esc Pausa"
+
+[node name="CombatStatus" type="Label" parent="MainStack/AppTabs/Combat2D"]
+unique_name_in_owner = true
+text = ""
+
+[node name="CombatBars" type="VBoxContainer" parent="MainStack/AppTabs/Combat2D"]
+unique_name_in_owner = true
+visible = false
+theme_override_constants/separation = 6
+
+[node name="P1HP" type="ProgressBar" parent="MainStack/AppTabs/Combat2D/CombatBars"]
+unique_name_in_owner = true
+max_value = 100.0
+value = 100.0
+
+[node name="P1ST" type="ProgressBar" parent="MainStack/AppTabs/Combat2D/CombatBars"]
+unique_name_in_owner = true
+max_value = 100.0
+value = 100.0
+
+[node name="P2HP" type="ProgressBar" parent="MainStack/AppTabs/Combat2D/CombatBars"]
+unique_name_in_owner = true
+max_value = 100.0
+value = 100.0
+
+[node name="P2ST" type="ProgressBar" parent="MainStack/AppTabs/Combat2D/CombatBars"]
+unique_name_in_owner = true
+max_value = 100.0
+value = 100.0
+
+[connection signal="pressed" from="MainStack/TopButtons/BtnNew" to="." method="_on_btn_new_pressed"]
+[connection signal="pressed" from="MainStack/TopButtons/BtnContinue" to="." method="_on_btn_continue_pressed"]
+[connection signal="pressed" from="MainStack/TopButtons/BtnSettings" to="." method="_on_btn_settings_pressed"]
+[connection signal="pressed" from="MainStack/TopButtons/BtnQuit" to="." method="_on_btn_quit_pressed"]
+
+[connection signal="pressed" from="MainStack/AppTabs/Booking/Header/SaveBtn" to="." method="_on_save_pressed"]
+[connection signal="pressed" from="MainStack/AppTabs/Booking/Header/SimBtn" to="." method="_on_simulate_show_pressed"]
+[connection signal="item_selected" from="MainStack/AppTabs/Booking/Header/Lang" to="." method="_on_lang_changed"]
+[connection signal="item_selected" from="MainStack/AppTabs/Booking/ShowRow/VenueOptions" to="." method="_on_venue_changed"]
+
+[connection signal="pressed" from="MainStack/AppTabs/Booking/MatchesRow/AddMatch" to="." method="_on_add_match_pressed"]
+[connection signal="pressed" from="MainStack/AppTabs/Booking/MatchesRow/ClearCard" to="." method="_on_clear_card_pressed"]
+[connection signal="pressed" from="MainStack/AppTabs/Booking/CardActions/DecideWinner" to="." method="_on_decide_winner_pressed"]
+[connection signal="pressed" from="MainStack/AppTabs/Booking/CardActions/PlayMatch" to="." method="_on_play_match_pressed"]
+
+[connection signal="pressed" from="MainStack/AppTabs/Roster/RosterActions/Hire" to="." method="_on_hire_pressed"]
+[connection signal="pressed" from="MainStack/AppTabs/Roster/RosterActions/Fire" to="." method="_on_fire_pressed"]
+
+[connection signal="pressed" from="MainStack/AppTabs/Titles/TitleActions/CreateTitle" to="." method="_on_create_title_pressed"]
+
+[connection signal="pressed" from="MainStack/AppTabs/Rivalries/RivalActions/CreateRivalry" to="." method="_on_create_rivalry_pressed"]

@@ -11,7 +11,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Exportar APK con Godot
-        uses: firebelley/godot-export@v5
+        uses: firebelley/godot-export@v1
         with:
           godot_version: "4.2.2"
           export_template_version: "4.2.2"

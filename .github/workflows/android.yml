@@ -1,0 +1,30 @@
+name: Build Android APK
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout proyecto
+        uses: actions/checkout@v4
+
+      - name: Exportar APK con Godot
+        uses: firebelley/godot-export@v6
+        with:
+          godot_version: "4.2.2"
+          export_template_version: "4.2.2"
+          relative_project_path: "."
+          export_presets: true
+        env:
+          ANDROID_KEYSTORE_BASE64: ${{ secrets.ANDROID_KEYSTORE_BASE64 }}
+          ANDROID_KEYSTORE_PASSWORD: ${{ secrets.ANDROID_KEYSTORE_PASSWORD }}
+          ANDROID_KEY_ALIAS: ${{ secrets.ANDROID_KEY_ALIAS }}
+          ANDROID_KEY_PASSWORD: ${{ secrets.ANDROID_KEY_PASSWORD }}
+
+      - name: Subir APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: Wrestling2D_APK
+          path: "**/*.apk"
